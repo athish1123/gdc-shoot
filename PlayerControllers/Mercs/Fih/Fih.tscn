@@ -1,16 +1,23 @@
 [gd_scene format=3 uid="uid://clyn3l73p80cj"]
 
-[ext_resource type="Script" uid="uid://2ip0lrtrrhsr" path="res://PlayerControllers/merc.gd" id="1_wsi6x"]
+[ext_resource type="Script" uid="uid://dc50upsi40p34" path="res://PlayerControllers/Mercs/Fih/fih.gd" id="1_kr1vs"]
+[ext_resource type="PackedScene" uid="uid://b2o8qrqm1mtei" path="res://PlayerControllers/Abilities/EvilShotgun/EvilShotgun.tscn" id="2_kr1vs"]
+[ext_resource type="PackedScene" uid="uid://l6sian0yldb7" path="res://PlayerControllers/Abilities/Grenade/GrenadeAbility.tscn" id="3_i4qsb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wsi6x"]
 
-[node name="Fih" type="CharacterBody3D" unique_id=1448412032 node_paths=PackedStringArray("camera")]
-script = ExtResource("1_wsi6x")
+[node name="Fih" type="CharacterBody3D" unique_id=1448412032 node_paths=PackedStringArray("camera", "abilities")]
+script = ExtResource("1_kr1vs")
 debug_mode = true
 camera = NodePath("Camera3D")
+abilities = [NodePath("EvilGunShotgun"), NodePath("GrenadeAbility")]
 metadata/_custom_type_script = "uid://2ip0lrtrrhsr"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2025284147]
 shape = SubResource("CapsuleShape3D_wsi6x")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1293931788]
+
+[node name="EvilGunShotgun" parent="." unique_id=1600695075 instance=ExtResource("2_kr1vs")]
+
+[node name="GrenadeAbility" parent="." unique_id=1092743482 instance=ExtResource("3_i4qsb")]
