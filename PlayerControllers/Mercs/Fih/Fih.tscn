@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dc50upsi40p34" path="res://PlayerControllers/Mercs/Fih/fih.gd" id="1_kr1vs"]
 [ext_resource type="PackedScene" uid="uid://b2o8qrqm1mtei" path="res://PlayerControllers/Abilities/EvilShotgun/EvilShotgun.tscn" id="2_kr1vs"]
 [ext_resource type="PackedScene" uid="uid://l6sian0yldb7" path="res://PlayerControllers/Abilities/Grenade/GrenadeAbility.tscn" id="3_i4qsb"]
+[ext_resource type="PackedScene" uid="uid://b36uuh56645j5" path="res://PlayerControllers/Abilities/Jump/JumpAbility.tscn" id="4_i4qsb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wsi6x"]
 
@@ -10,7 +11,7 @@
 script = ExtResource("1_kr1vs")
 debug_mode = true
 camera = NodePath("Camera3D")
-abilities = [NodePath("EvilGunShotgun"), NodePath("GrenadeAbility")]
+abilities = [NodePath(""), NodePath("GrenadeAbility"), NodePath("JumpAbility")]
 metadata/_custom_type_script = "uid://2ip0lrtrrhsr"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2025284147]
@@ -19,5 +20,10 @@ shape = SubResource("CapsuleShape3D_wsi6x")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1293931788]
 
 [node name="EvilGunShotgun" parent="." unique_id=1600695075 instance=ExtResource("2_kr1vs")]
+max_ammo = 6
 
 [node name="GrenadeAbility" parent="." unique_id=1092743482 instance=ExtResource("3_i4qsb")]
+
+[node name="JumpAbility" parent="." unique_id=27473948 instance=ExtResource("4_i4qsb")]
+jump_strength = 6.0
+trigger_key = "Space"

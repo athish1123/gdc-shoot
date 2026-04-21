@@ -1,6 +1,5 @@
 extends Merc
 
-
 func custom_ready():
 	pass
 
